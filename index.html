@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Color Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-indigo-700 mb-2">AI Color Prediction System</h1>
+            <p class="text-lg text-gray-600">Advanced pattern analysis with loss coverage protection</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Prediction Input Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Color Prediction</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Select Color Pattern</label>
+                        <select id="colorPattern" class="w-full p-2 border rounded">
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="random">Random Pattern</option>
+                        </select>
+                    </div>
+                    <button id="analyzeBtn" class="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition">
+                        <i class="fas fa-brain mr-2"></i>AI Analyze
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Analysis Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-600">AI Analysis</h2>
+                <div id="analysisResult" class="p-4 bg-gray-50 rounded">
+                    <p class="text-gray-500 italic">Analysis will appear here...</p>
+                </div>
+                <div class="mt-4">
+                    <button id="predictBtn" class="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition">
+                        <i class="fas fa-magic mr-2"></i>Get Sureshot Prediction
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loss Coverage System -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Loss Coverage System</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-lg font-medium mb-2">Last Two Losses</h3>
+                    <div id="lossHistory" class="space-y-2">
+                        <div class="p-2 bg-red-100 text-red-800 rounded">No losses recorded</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium mb-2">AI Reversal Prediction</h3>
+                    <div id="reversalPrediction" class="p-4 bg-blue-50 text-blue-800 rounded">
+                        <p>AI will analyze loss pattern and suggest reversal</p>
+                    </div>
+                    <button id="reverseBtn" class="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-exchange-alt mr-2"></i>Reverse Pattern
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prediction Results -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-indigo-600">Prediction Results</h2>
+            <div id="predictionResults" class="space-y-4">
+                <div class="p-4 bg-green-100 text-green-800 rounded">
+                    <p><strong>Last Prediction:</strong> <span id="lastPrediction">None yet</span></p>
+                    <p><strong>Confidence:</strong> <span id="confidenceLevel">0%</span></p>
+                </div>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="p-3 bg-red-500 text-white rounded">Red: <span id="redCount">0</span></div>
+                    <div class="p-3 bg-green-500 text-white rounded">Green: <span id="greenCount">0</span></div>
+                    <div class="p-3 bg-blue-500 text-white rounded">Blue: <span id="blueCount">0</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
